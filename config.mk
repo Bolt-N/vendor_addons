@@ -1,6 +1,10 @@
 LOCAL_PATH := $(call my-dir)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
+# Remove warning from every time you open it
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.verified=true \
+
 # init file
 PRODUCT_COPY_FILES += \
     vendor/addons/superuser/su:root/sbin/su \
@@ -10,4 +14,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     KernelAdiutor \
     Substratum \
-    Superuser
+    Superuser 
